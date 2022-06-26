@@ -7,13 +7,25 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Categoria from './pages/Categoria';
 
+const TabNavigate = createNativeStackNavigator();
+
+const NativeStackNavigator = ()=>{
+  return (
+    <StackNavigation.Navigator>
+       <StackNavigation.Screen name='LoginScreen' component={Login}/>
+      <StackNavigation.Screen name='HomeScreen' component={Home}/>
+      <StackNavigation.Screen name='CategoriaScreen' component={Categoria}/>
+    </StackNavigation.Navigator>
+  );
+}
+
 const TabNavigation = createBottomTabNavigator();
 
 const BottomTabNavigator = () =>{
   return(
   <TabNavigation.Navigator screenOptions={{
     headerShown:false,
-    tabBarStyle:{backgroundColor: '#000', borderBottomWidth:0}}}>
+    tabBarStyle:{backgroundColor: '#f3d948', borderBottomWidth:0}}}>
     <TabNavigation.Screen name='HomeTabScreen' component={Home}/>
     <TabNavigation.Screen name='CategoriaTabScreen' component={Categoria}/>
   </TabNavigation.Navigator>
@@ -23,9 +35,7 @@ const BottomTabNavigator = () =>{
 const StackNavigation = createNativeStackNavigator();
 
  export default () => {
-  // return(
-  //   <Home/>
-  // )
+  
  return(
   <NavigationContainer>
     <StackNavigation.Navigator>
@@ -37,7 +47,6 @@ const StackNavigation = createNativeStackNavigator();
       name = 'Home'
       component={BottomTabNavigator}
       />
-
     </StackNavigation.Navigator>
   </NavigationContainer>
 

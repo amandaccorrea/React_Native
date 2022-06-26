@@ -1,11 +1,12 @@
 import React from "react";
-import { ScrollView, StyleSheet, View,TouchableOpacity } from "react-native";
-import { Text, Card } from "react-native-elements";
+import { ScrollView, StyleSheet, View,TouchableOpacity,Text, Image } from "react-native";
+import {  Card } from "react-native-elements";
 
 const Home = () =>{
     
     return(
         <ScrollView style = {styles.container}>
+            <Text>{'Categorias'}</Text>
         <ScrollView style = {styles.scrollCategoria} horizontal = {true}>
             <TouchableOpacity
             onPress={() => console.log('Categoria 1 Clicada')}
@@ -44,7 +45,7 @@ const Home = () =>{
             </TouchableOpacity>
         </ScrollView>
         <Text>{'Recentes'}</Text>
-        <ScrollView horizontal = {true}>
+        <ScrollView style={styles.container_recentes} horizontal = {true}>
         <TouchableOpacity>
             <Card >
                 <Card.Image source={require('../../assets/a.jpg')}/>
@@ -54,6 +55,77 @@ const Home = () =>{
                 </Card.Title>
                 <Text> {'Descrição'}</Text>
             </Card>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Card >
+                <Card.Image source={require('../../assets/a.jpg')}/>
+                <Card.Divider/>
+                <Card.Title>
+                    Titulo
+                </Card.Title>
+                <Text> {'Descrição'}</Text>
+            </Card>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Card >
+                <Card.Image source={require('../../assets/a.jpg')}/>
+                <Card.Divider/>
+                <Card.Title>
+                    Titulo
+                </Card.Title>
+                <Text> {'Descrição'}</Text>
+            </Card>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Card >
+                <Card.Image source={require('../../assets/a.jpg')}/>
+                <Card.Divider/>
+                <Card.Title>
+                    Titulo
+                </Card.Title>
+                <Text> {'Descrição'}</Text>
+            </Card>
+            </TouchableOpacity>
+        </ScrollView>
+        <Text>{'Mais Pedidos da sua Região'}</Text>
+        <ScrollView>
+        <TouchableOpacity>
+                <View style = {styles.mais_pedidos}>
+                {/* <Image source={{uri: 'asset:/lombinho.jpg'}} 
+                style={styles.stretch}/> */}
+                <Image source={require('../../assets/lombinho.jpeg')}
+                style={styles.stretch}
+                />
+                <Text style={styles.texto_pedidos}>{'Lombinho'}</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style = {styles.mais_pedidos}>
+                <Image source={require('../../assets/frango-com-fritas.jpeg')}
+                style={styles.stretch}
+                />
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style = {styles.mais_pedidos}>
+                <Image source={require('../../assets/feijoada.jpeg')}
+                style={styles.stretch}
+                />
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style = {styles.mais_pedidos}>
+                <Image source={require('../../assets/frango-assado.jpeg')}
+                style={styles.stretch}
+                />
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style = {styles.mais_pedidos}>
+                <Image source={require('../../assets/yakisoba.jpeg')}
+                style={styles.stretch}
+                />
+                </View>
             </TouchableOpacity>
         </ScrollView>
         </ScrollView>
@@ -82,7 +154,22 @@ const styles = StyleSheet.create({
         color: '#fff',
         textAlign:'center',
         fontWeight:'bold'
-    }
+    },
+    mais_pedidos:{
+        
+        justifyContent:'center'
+    },
+    stretch: {
+        width: 450,
+        height: 500,
+        resizeMode: 'stretch',
+      },
+      texto_pedidos:{
+        textAlign:"center",
+        backfaceVisibility:"hidden",
+        fontSize:23,
+        color:'#f5ebeb'
+      }
+    });
     
-    })
     export default Home;
