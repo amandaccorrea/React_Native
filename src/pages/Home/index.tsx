@@ -161,14 +161,15 @@ const styles = StyleSheet.create({
     },
     stretch: {
         width: 450,
-        height: 500,
+        height: 450,
         resizeMode: 'stretch',
       },
       texto_pedidos:{
         textAlign:"center",
         backfaceVisibility:"hidden",
         fontSize:23,
-        color:'#f5ebeb'
+        color:'#f5ebeb',
+        elevation:3
       }
     });
     
